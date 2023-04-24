@@ -5,25 +5,20 @@
 
 int m = InputNumbers("Введите M: ");
 int n = InputNumbers("Введите N: ");
-int temp = m;
+int sum = 0;
 
-if (m > n)
+
+PrintSumm(m, n, sum);
+
+void PrintSumm(int m, int n, int sum)
 {
-    m = n;
-    n = temp;
-}
-
-PrintSumm(m, n, temp = 0);
-
-void PrintSumm(int m, int n, int summ)
-{
-    summ = summ + n;
+    sum = sum + n;
     if (n <= m)
     {
-        Console.Write($"Сумма элементов = {summ} ");
+        Console.Write($"Сумма элементов = {sum} ");
         return;
     }
-    PrintSumm(m, n - 1, summ);
+    PrintSumm(m, n - 1, sum);
 }
 
 int InputNumbers(string input)
